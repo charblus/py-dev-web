@@ -8,13 +8,13 @@ python -m django --version  查看django 版本
 [Anaconda 介绍、安装、使用及常用命令并介绍了conda pip virtualnev ](https://www.jianshu.com/p/f456f414bb3b)
 
 ## 开发
-[搭建django 项目 ]( https://www.jianshu.com/p/d671c8cb274f)
+* [搭建django 项目 ]( https://www.jianshu.com/p/d671c8cb274f)
 1.  `django-admin startproject 项目名称`  （注：项目名称  不支持_-分割符分开形式 推荐驼峰写法 ）
 2.   创建程序app：`django-admin startapp 程序名称`  (一般一个项目有多个app, 当然通用的app也可以在多个项目中使用。)
-3.   生成指定数据库SQL脚本：python manage.py makemigrations
-4.   自动执行SQL脚本到数据库：python manage.py migrate
-5.   创建超级管理员：python mangae.py createsuperuser
-6.   运行程序：python manage.py runserver
+3.   生成指定数据库SQL脚本：`python manage.py makemigrations`
+4.   自动执行SQL脚本到数据库：`python manage.py migrate`
+5.   创建超级管理员：`python mangae.py createsuperuser`
+6.   运行程序：`python manage.py runserver`
 
 ```
 pyDevWeb                        项目名称
@@ -43,6 +43,25 @@ pyDevWeb                        项目名称
 └── README.md
 
 ```
+
+* 添加model（在app下的models.py创建表） 运行命令生成对应的表
+```
+python manage.py makemigrations    
+# 1. 创建更改的文件
+python manage.py migrate
+# 2. 将生成py文件应用到数据库
+python manage.py runserver
+```
+### 接口api
+* rest-framework
+
+```
+pip install djangorestframework
+pip install markdown       # Markdown support for the browsable API.
+pip install django-filter  # Filtering support
+```
+
+
 
 ## 库管理
 安装插件 `pip install pymysql`
