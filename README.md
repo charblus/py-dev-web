@@ -19,7 +19,7 @@ python -m django --version  查看django 版本
 ```
 pyDevWeb                        项目名称
 ├── pyDevWeb                    主项目文档
-│   ├── __init__.py
+│   ├── __init__.py             网址入口，
 │   ├── __init__.pyc
 │   ├── settings.py
 │   ├── settings.pyc
@@ -43,6 +43,26 @@ pyDevWeb                        项目名称
 └── README.md
 
 ```
+
+```
+
+Django 目录结构
+urls.py
+网址入口，关联到对应的views.py中的一个函数（或者generic类），访问网址就对应一个函数。
+views.py
+处理用户发出的请求，从urls.py中对应过来, 通过渲染templates中的网页可以将显示内容，比如登陆后的用户名，用户请求的数据，输出到网页。
+models.py
+与数据库操作相关，存入或读取数据时用到这个，当然用不到数据库的时候 你可以不使用。
+forms.py
+表单，用户在浏览器上输入数据提交，对数据的验证工作以及输入框的生成等工作，当然你也可以不使用。
+templates 文件夹
+views.py 中的函数渲染templates中的Html模板，得到动态内容的网页，当然可以用缓存来提高速度。
+admin.py
+后台，可以用很少量的代码就拥有一个强大的后台。
+settings.py
+Django 的设置，配置文件，比如 DEBUG 的开关，静态文件的位置等。
+```
+
 
 * 添加model（在app下的models.py创建表） 运行命令生成对应的表
 ```
@@ -87,3 +107,27 @@ pip install django-filter  # Filtering support
 注意：当你的代码中没有_*_ coding:utf-8_*_  时，你的代码中若存在中文注释，那么你执行这段代码时，你就会报错，因此在你写代码的时候，最好加上
 `_*_ coding:utf-8 _*_ `
 形成习惯
+
+
+## ERRER
+1. ` django.core.exceptions.ImproperlyConfigured: mysqlclient 1.3.13 or newer is required; you have 0.9.3`
+> 这是说我版本低的意思吗 我明安装的最新的1.3.13 
+网上查了下， 让我到`__init__.py`中加上
+```python
+# -*- coding: utf-8 -*-
+import pymysql
+pymysql.install_as_MySQLdb()  # 修复django找不到MySQLdb
+
+```
+然后执行
+`python manage.py makemigrations`和`python manage.py migrate`同步数据库
+
+然而还是报错 后来我把`__init__.py`加的注释一行 success
+```python
+# -*- coding: utf-8 -*-
+import pymysql
+# pymysql.install_as_MySQLdb()  # 修复django找不到MySQLdb
+
+```
+合着是我的写法是低版本的写法，迭
+

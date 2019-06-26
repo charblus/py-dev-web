@@ -20,5 +20,6 @@ from pyServer import views as pyServer_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', pyServer_views.index),
-    url(r'^create/', pyServer_views.create)
+    url(r'^create/', pyServer_views.create),
+    url(r'^userinfo/', pyServer_views.userinfo)
 ]
