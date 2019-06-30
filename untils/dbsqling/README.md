@@ -1,5 +1,6 @@
+## python django 链接mysql
 ### sql 语句
-涞源 mysql.sql
+来源 当前目录下mysql.sql
 
 
 

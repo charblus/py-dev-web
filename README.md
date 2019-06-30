@@ -131,3 +131,24 @@ import pymysql
 ```
 合着是我的写法是低版本的写法，迭
 
+
+### api接口开发
+
+[利用 Django REST framework 编写 RESTful API](https://www.cnblogs.com/bayueman/p/6647641.html)
+
+[ API 指南（3-2）：基于方法的视图（@api_view()） ](https://www.jianshu.com/p/291450f2435c)
+
+
+[Django接入Swagger，生成Swagger接口文档-操作解析](https://www.jianshu.com/p/c53de96f3ff1)
+
+
+[django中文网](https://www.django.cn/course/show-27.html)
+
+
+## 启动项目
+```
+conda info -e
+激活py37环境  conda activate py37
+退出环境     conda deactivate
+python manage.py runserver
+```

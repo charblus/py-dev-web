@@ -21,5 +21,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', pyServer_views.index),
     url(r'^create/', pyServer_views.create),
-    url(r'^userinfo/', pyServer_views.userinfo)
+    url(r'^userinfo/', pyServer_views.userinfo),
+    url(r'^hello_world/', pyServer_views.hello_world),
+    url(r'^clock/', pyServer_views.clock)
 ]

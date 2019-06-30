@@ -1,3 +1,6 @@
+
+## python 爬虫笔记
+
 ### spider001
 + 取豆瓣评价 编码unicode 需要转码   
 + 在爬虫过程中，使用的是lxml的xpath查找对应的字段。xpath('node()')匹配文本为lxml.etree.ElementUnicodeResult对象，节点为lxml.etree.Element对象。
